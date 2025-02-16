@@ -1,6 +1,7 @@
 $engine: 3
 $onesync: on
 name: QBox Setup FiveM
+author: Four
 description: Recipe for the base resources required to run a minimal FiveM server.
 
 tasks: 
@@ -12,10 +13,30 @@ tasks:
   - action: remove_path
     path: ./resources/[cfx-default]/[gameplay]/chat
 
-  # Download default server.cfg for FiveM
-  - action: download_file
-    url: https://raw.githubusercontent.com/tabarra/CFX-Default-recipe/main/server.cfg
-    path: ./server.cfg
+  #Connect Database
+  - action: connect_database
+
+  # Download default files
+  - action: download_github
+    src: https://github.com/l-404-l/CFX-Default-Recipe
+    ref: main
+    dest: ./tmp/Builder
+
+  - action: move_path
+    src: ./tmp/Builder/server.cfg
+    dest: ./server.cfg
+
+  - action: move_path
+    src: ./tmp/Builder/voice.cfg
+    dest: ./voice.cfg
+
+  - action: move_path
+    src: ./tmp/Builder/ox.cfg
+    dest: ./ox.cfg
+
+  - action: move_path
+    src: ./tmp/Builder/permissions.cfg
+    dest: ./permissions.cfg
 
   - action: ensure_dir
     path: ./resources/[qbx]
@@ -31,3 +52,8 @@ tasks:
     
   - action: ensure_dir
     path: ./resources/[vehicles]
+
+
+  # Clean up
+  - action: remove_path
+    path: ./tmp
