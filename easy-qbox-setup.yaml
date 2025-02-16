@@ -16,3 +16,18 @@ tasks:
   - action: download_file
     url: https://raw.githubusercontent.com/tabarra/CFX-Default-recipe/main/server.cfg
     path: ./server.cfg
+
+  - action: ensure_dir
+    path: ./resources/[qbx]
+
+  - action: ensure_dir
+    path: ./resources/[ox]
+
+  - action: ensure_dir
+    path: ./resources/[standalone]
+
+  - action: ensure_dir
+    path: ./resources/[maps]
+    
+  - action: ensure_dir
+    path: ./resources/[vehicles]
