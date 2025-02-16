@@ -1,6 +1,5 @@
 $engine: 3
 $onesync: on
-$steamRequired: true
 name: QBox Setup FiveM
 author: Four
 description: Recipe for the base resources required to run a minimal FiveM server.
