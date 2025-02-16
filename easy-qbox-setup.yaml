@@ -1,0 +1,18 @@
+$engine: 3
+$onesync: on
+name: QBox Setup FiveM
+description: Recipe for the base resources required to run a minimal FiveM server.
+
+tasks: 
+  # Download default CFX resources
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    subpath: resources
+    dest: ./resources/[cfx-default]
+  - action: remove_path
+    path: ./resources/[cfx-default]/[gameplay]/chat
+
+  # Download default server.cfg for FiveM
+  - action: download_file
+    url: https://raw.githubusercontent.com/tabarra/CFX-Default-recipe/main/server.cfg
+    path: ./server.cfg
