@@ -5,7 +5,7 @@ author: Four
 description: Recipe for the base resources required to run a minimal FiveM server.
 
 tasks: 
-  # Download default CFX resources
+  # Download default CFX resources 
   - action: download_github
     src: https://github.com/citizenfx/cfx-server-data
     subpath: resources
